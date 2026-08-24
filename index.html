@@ -34,8 +34,33 @@
   <div class="tab-grid" id="tab-grid"></div>
 </main>
 
+<!-- Bottom Right Dark Mode Toggle -->
+<div class="theme-toggle-wrapper">
+  <span>Dark Mode</span>
+  <label class="switch">
+    <input type="checkbox" id="theme-toggle-checkbox">
+    <span class="slider"></span>
+  </label>
+</div>
+
 <script src="data.js"></script>
 <script>
+  // Theme initialization and event listener
+  const savedTheme = localStorage.getItem('tel_theme') || 'light';
+  if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  const toggleInput = document.getElementById('theme-toggle-checkbox');
+  if (toggleInput) {
+    toggleInput.checked = (savedTheme === 'dark');
+    toggleInput.addEventListener('change', (e) => {
+      const theme = e.target.checked ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('tel_theme', theme);
+    });
+  }
+
   const grid = document.getElementById('tab-grid');
   const tilts = [-1.2, 0.8, -0.5, 1.4, -1.6, 0.6];
 
@@ -62,8 +87,6 @@
   const searchBox = document.getElementById('search-box');
   const resultsBox = document.getElementById('search-results');
 
-  // Build one flat list of every lesson, remembering which subject
-  // (and which position in that subject's lessons array) it came from.
   const allLessons = [];
   SUBJECTS.forEach(subject => {
     subject.lessons.forEach((lesson, index) => {
@@ -81,7 +104,7 @@
     }
 
     const matches = allLessons.filter(({ lesson }) =>
-     lesson.title.toLowerCase().includes(query)
+      lesson.title.toLowerCase().includes(query)
     );
 
     resultsBox.classList.add('open');
