@@ -81,7 +81,7 @@ const SUBJECTS = [
       {
         title: "Basic Arduino Programming",
         youtubeId: "7446OoIyJk8",
-        notes: "Quick review on arduino programming on Tinkercad. It includes variables, functions, operations, and conditional statements.",
+        notes: "Quick review by Marcello on arduino programming on Tinkercad. It includes variables, functions, operations, and conditional statements.",
         period: "1st Term Finals"
       }
     ]
@@ -92,9 +92,9 @@ const SUBJECTS = [
     accent: "blue",
     lessons: [
       {
-        title: "Placeholder!",
-        youtubeId: "dQw4w9WgXcQ",
-        notes: "Nothing to see here yet...",
+        title: "Compound and Simple Intrest",
+        youtubeId: "6QaMMPhV_Rg",
+        notes: "A quick recap by Angelo on Simple and Compound intrest.",
         period: "1st Term Finals"
       },
       {
