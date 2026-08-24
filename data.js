@@ -10,7 +10,7 @@
     {
       slug: "math",              <- used in the URL, no spaces, lowercase
       name: "Math",              <- shown on screen
-      accent: "amber",           <- one of: amber, teal, plum, brick
+      accent: "amber",           <- one of: amber, teal, plum, brick, cyan, green, blue, plant
       lessons: [
         {
           title: "Nonlinear Systems",
