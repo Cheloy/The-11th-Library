@@ -4,6 +4,8 @@
   --paper: #FAF6EC;
   --paper-dim: #F1EBDC;
   --ink: #201F26;
+  --text-subtle: rgba(32,31,38,0.7);
+  --text-muted: rgba(32,31,38,0.45);
   --navy: #1E2A47;
   --navy-soft: #2C3B60;
   --amber: #E5A339;
@@ -27,6 +29,17 @@
   --radius: 10px;
 }
 
+[data-theme="dark"] {
+  --paper: #161518;
+  --paper-dim: #222026;
+  --ink: #ECE8E1;
+  --text-subtle: rgba(236,232,225,0.75);
+  --text-muted: rgba(236,232,225,0.45);
+  --navy: #0E1526;
+  --line: rgba(236,232,225,0.14);
+  --shadow: 0 10px 24px rgba(0,0,0,0.45);
+}
+
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -37,6 +50,8 @@ body {
   color: var(--ink);
   font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.5;
+  transition: background 0.25s ease, color 0.25s ease;
+  padding-bottom: 80px;
 }
 
 h1, h2, h3 {
@@ -59,7 +74,7 @@ a { color: inherit; }
 
 .site-header {
   background: var(--navy);
-  color: var(--paper);
+  color: #FAF6EC;
   padding: 18px clamp(20px, 5vw, 56px);
   display: flex;
   align-items: center;
@@ -69,7 +84,7 @@ a { color: inherit; }
 
 .site-header a.brand {
   text-decoration: none;
-  color: var(--paper);
+  color: #FAF6EC;
 }
 
 .site-header .brand h1 {
@@ -107,7 +122,7 @@ a { color: inherit; }
   padding: 10px 16px 10px 38px;
   font-family: 'Inter', sans-serif;
   font-size: 0.88rem;
-  color: var(--paper);
+  color: #FAF6EC;
   background: rgba(250,246,236,0.1);
   border: 1px solid rgba(250,246,236,0.18);
   border-radius: 999px;
@@ -153,7 +168,7 @@ a { color: inherit; }
   border-radius: 999px;
   transition: background 0.15s ease, color 0.15s ease;
 }
-.back-link:hover { background: rgba(250,246,236,0.12); color: var(--paper); }
+.back-link:hover { background: rgba(250,246,236,0.12); color: #FAF6EC; }
 
 /* ---------- Home: shelf + folder tabs ---------- */
 
@@ -165,7 +180,7 @@ main.shelf {
 
 main.shelf > p.intro {
   max-width: 46ch;
-  color: rgba(32,31,38,0.7);
+  color: var(--text-subtle);
   margin-bottom: 40px;
 }
 
@@ -181,21 +196,21 @@ main.shelf > p.intro {
   padding: 10px 14px;
   transition: background 0.15s ease;
 }
-.result-item:hover { background: #ECE4D0; }
+.result-item:hover { background: var(--line); }
 
 .result-subject {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--tab-color, var(--navy));
+  color: var(--tab-color, var(--amber));
   flex-shrink: 0;
 }
 
 .result-title { font-size: 0.9rem; }
 
 .no-results {
-  color: rgba(32,31,38,0.55);
+  color: var(--text-muted);
   font-size: 0.9rem;
   padding: 8px 4px;
 }
@@ -217,7 +232,7 @@ main.shelf > p.intro {
 }
 
 .tab-card:hover { transform: rotate(0deg) translateY(-4px); }
-.tab-card:focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; border-radius: var(--radius); }
+.tab-card:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; border-radius: var(--radius); }
 
 .tab-card .tab-ear {
   position: absolute;
@@ -250,7 +265,7 @@ main.shelf > p.intro {
 .tab-card h2 { font-size: 1.3rem; margin-bottom: 6px; }
 
 .tab-card .count {
-  color: rgba(32,31,38,0.6);
+  color: var(--text-subtle);
   font-size: 0.85rem;
 }
 
@@ -288,7 +303,7 @@ main.course {
 .lesson-list h2 {
   font-size: 1rem;
   margin-bottom: 10px;
-  color: rgba(32,31,38,0.65);
+  color: var(--text-subtle);
   font-family: 'IBM Plex Mono', monospace;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -300,7 +315,7 @@ main.course {
   font-family: 'IBM Plex Mono', monospace;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: rgba(32,31,38,0.5);
+  color: var(--text-muted);
   margin: 18px 0 4px;
   padding-top: 10px;
   border-top: 1px solid var(--line);
@@ -329,26 +344,26 @@ main.course {
 }
 
 .lesson-item:focus-visible {
-  outline: 2px solid var(--navy);
+  outline: 2px solid var(--amber);
   outline-offset: 2px;
 }
 
 .lesson-item .n {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.75rem;
-  color: rgba(32,31,38,0.45);
+  color: var(--text-muted);
   flex-shrink: 0;
 }
 
 .lesson-item:hover { background: var(--paper-dim); }
 .lesson-item.active {
   background: var(--paper-dim);
-  border-left-color: var(--tab-color, var(--navy));
+  border-left-color: var(--tab-color, var(--amber));
   font-weight: 600;
 }
 
 .lesson-item .done-check {
-  accent-color: var(--tab-color, var(--navy));
+  accent-color: var(--tab-color, var(--amber));
   width: 15px;
   height: 15px;
   flex-shrink: 0;
@@ -356,7 +371,7 @@ main.course {
 }
 
 .lesson-item.done span:not(.n) {
-  color: rgba(32,31,38,0.45);
+  color: var(--text-muted);
   text-decoration: line-through;
 }
 
@@ -383,10 +398,75 @@ main.course {
 
 .lesson-meta { padding-top: 18px; }
 .lesson-meta h1 { font-size: 1.6rem; margin-bottom: 8px; }
-.lesson-meta p { color: rgba(32,31,38,0.75); max-width: 62ch; }
+.lesson-meta p { color: var(--text-subtle); max-width: 62ch; }
 
 .empty-state {
   padding: 60px 20px;
   text-align: center;
-  color: rgba(32,31,38,0.6);
+  color: var(--text-muted);
+}
+
+/* ---------- Bottom Right Dark Mode Toggle ---------- */
+
+.theme-toggle-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--paper-dim);
+  border: 1px solid var(--line);
+  padding: 8px 14px;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-subtle);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--line);
+  transition: 0.25s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--paper);
+  transition: 0.25s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--amber);
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
 }
