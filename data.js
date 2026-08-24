@@ -94,7 +94,7 @@ const SUBJECTS = [
       {
         title: "Compound and Simple Intrest",
         youtubeId: "6QaMMPhV_Rg",
-        notes: "A quick recap by Angelo on Simple and Compound intrest.",
+        notes: "A quick recap by Angelo on how to solve for Simple and Compound intrest.",
         period: "1st Term Finals"
       },
       {
