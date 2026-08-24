@@ -17,8 +17,33 @@
   <!-- filled in by script -->
 </main>
 
+<!-- Bottom Right Dark Mode Toggle -->
+<div class="theme-toggle-wrapper">
+  <span>Dark Mode</span>
+  <label class="switch">
+    <input type="checkbox" id="theme-toggle-checkbox">
+    <span class="slider"></span>
+  </label>
+</div>
+
 <script src="data.js"></script>
 <script>
+  // Theme initialization and event listener
+  const savedTheme = localStorage.getItem('tel_theme') || 'light';
+  if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  const toggleInput = document.getElementById('theme-toggle-checkbox');
+  if (toggleInput) {
+    toggleInput.checked = (savedTheme === 'dark');
+    toggleInput.addEventListener('change', (e) => {
+      const theme = e.target.checked ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('tel_theme', theme);
+    });
+  }
+
   const params = new URLSearchParams(window.location.search);
   const slug = params.get('subject');
   const subject = SUBJECTS.find(s => s.slug === slug);
@@ -58,8 +83,6 @@
     `;
 
     const btnWrap = document.getElementById('lesson-buttons');
-
-    // ---- completed-lesson tracking (saved in the browser via localStorage) ----
     const storageKey = `lessonshelf-completed-${subject.slug}`;
 
     function getCompleted() {
@@ -91,14 +114,12 @@
 
     const completedTitles = getCompleted();
 
-    // Group lessons by period, but keep each lesson's ORIGINAL index in
-    // subject.lessons so showLesson(index) and the video player still work.
     PERIODS.forEach(periodName => {
       const inThisPeriod = subject.lessons
         .map((lesson, index) => ({ lesson, index }))
         .filter(item => item.lesson.period === periodName);
 
-      if (inThisPeriod.length === 0) return; // skip empty periods
+      if (inThisPeriod.length === 0) return;
 
       const heading = document.createElement('h3');
       heading.className = 'period-heading';
@@ -129,8 +150,6 @@
       });
     });
 
-    // Lessons with a period that doesn't match anything in PERIODS
-    // (typo, or not assigned yet) still show up here so nothing gets lost.
     const unsorted = subject.lessons
       .map((lesson, index) => ({ lesson, index }))
       .filter(item => !PERIODS.includes(item.lesson.period));
