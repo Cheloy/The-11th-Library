@@ -60,10 +60,10 @@ const SUBJECTS = [
         period: "1st Term Finals"
       },
       {
-        title: "Placeholder!",
-        youtubeId: "dQw4w9WgXcQ",
-        notes: "Nothing to see here yet...",
-        period: "2nd Term Midterm"
+        title: "Solving Nonlinear Systems!",
+        youtubeId: "jTO8rND3dKg",
+        notes: "Another guide on solving Nonlinear Systems",
+        period: "1st Term Finals"
       },
       {
         title: "Placeholder!",
