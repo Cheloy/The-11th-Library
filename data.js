@@ -83,6 +83,12 @@ const SUBJECTS = [
         youtubeId: "7446OoIyJk8",
         notes: "Quick review by Marcello on arduino programming on Tinkercad. It includes variables, functions, operations, and conditional statements.",
         period: "1st Term Finals"
+      },
+      {
+        title: "Arduino Functions",
+        youtubeId: "d4HmxJItB6U",
+        notes: "Video on how to create and use functions using local and global variables. May be included in the practical exam.",
+        period: "1st Term Finals"
       }
     ]
   },
