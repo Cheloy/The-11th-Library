@@ -66,10 +66,10 @@ const SUBJECTS = [
         period: "1st Term Finals"
       },
       {
-        title: "Placeholder!",
-        youtubeId: "dQw4w9WgXcQ",
-        notes: "Nothing to see here yet...",
-        period: "3rd Term Finals"
+        title: "Binomial Theorem",
+        youtubeId: "uNvuoO7-_vk",
+        notes: "Quick guide by Angelo on Binomial Theorem.",
+        period: "1st Term Finals"
       }
     ]
   },
