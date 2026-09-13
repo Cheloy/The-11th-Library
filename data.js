@@ -104,9 +104,9 @@ const SUBJECTS = [
         period: "1st Term Finals"
       },
       {
-        title: "Placeholder!",
-        youtubeId: "dQw4w9WgXcQ",
-        notes: "Nothing to see here yet...",
+        title: "Creating Truth Tables",
+        youtubeId: "Zgx7LrIoq64",
+        notes: "Guide by Angelo on how to make truth tables. Related to logic and reasoning.",
         period: "1st Term Finals"
       },
       {
