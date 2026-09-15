@@ -161,9 +161,9 @@ const SUBJECTS = [
     accent: "cyan",
     lessons: [
       {
-        title: "Placeholder!",
-        youtubeId: "dQw4w9WgXcQ",
-        notes: "Nothing to see here yet...",
+        title: "Physics Exam Questions Review",
+        youtubeId: "QOeMPZXqcqM",
+        notes: "A quick review by Marcello on how to solve questions related to the exam. Includes solutions and index card at the end.",
         period: "1st Term Finals"
       }
     ]
